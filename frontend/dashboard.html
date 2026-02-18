@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Fake News Detection System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>FakeNews Detector</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="dashboard-container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div>
+                    <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
+                    <p class="header-subtitle">Real-time insights and statistics</p>
+                </div>
+                
+                <div class="header-controls">
+                    <button class="btn btn-outline" id="refreshDashboard">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon blue">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" id="totalPredictions">0</div>
+                        <div class="kpi-label">Total Predictions</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-card fake">
+                    <div class="kpi-icon red">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" id="fakeCount">0</div>
+                        <div class="kpi-label">Fake News</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-card real">
+                    <div class="kpi-icon green">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" id="realCount">0</div>
+                        <div class="kpi-label">Real News</div>
+                    </div>
+                </div>
+                
+                <div class="kpi-card warning">
+                    <div class="kpi-icon orange">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="kpi-content">
+                        <div class="kpi-value" id="suspiciousCount">0</div>
+                        <div class="kpi-label">Suspicious</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 1 -->
+            <div class="charts-row">
+                <!-- Predictions Over Time -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Predictions Over Time</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Distribution Chart -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-pie"></i> Prediction Distribution</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row 2 -->
+            <div class="charts-row">
+                <!-- Confidence Distribution -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-chart-bar"></i> Confidence Distribution</h3>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="confidenceChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Model Performance -->
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-tachometer-alt"></i> Model Metrics</h3>
+                    </div>
+                    <div class="metrics-container" id="modelMetrics">
+                        <div class="metric-item">
+                            <span class="metric-label">Accuracy</span>
+                            <span class="metric-value" id="modelAccuracy">95%</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Status</span>
+                            <span class="status-badge status-real" id="modelStatus">Active</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Avg Confidence</span>
+                            <span class="metric-value" id="avgConfidence">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Predictions Table -->
+            <div class="recent-predictions">
+                <div class="section-header">
+                    <h2><i class="fas fa-clock"></i> Recent Predictions</h2>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Title</th>
+                                <th>Result</th>
+                                <th>Confidence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentPredictions">
+                            <tr>
+                                <td colspan="4" class="empty-state">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    <p>Loading predictions...</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Fake News Detection System. All rights reserved.</p>
+            <p class="footer-small">Powered by Deep Learning | Version 1.0.0</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

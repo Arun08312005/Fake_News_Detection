@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Fake News Detection System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>FakeNews Detector</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html" class="active">About</a></li>
+                <li><a href="/dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="animate-fade-in-down">About The Project</h1>
+            <p class="animate-fade-in-up">Understanding our fake news detection system</p>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-section">
+            <!-- How It Works -->
+            <div class="about-card animate-slide-in-up">
+                <center><h2><i class="fas fa-robot"></i> How It Works</h2></center><br>
+                <div class="about-content">
+                    <p>
+                        Our system uses a Convolutional Neural Network (CNN) specifically designed for text classification. 
+                        The model analyzes patterns in news articles by converting text into numerical representations 
+                        and identifying features that distinguish fake news from real news.
+                    </p>
+                </div>
+            </div><br><br>
+
+            <!-- Model Architecture -->
+            <div class="about-card animate-slide-in-up">
+                <center><h2><i class="fas fa-network-wired"></i> Model Architecture</h2><br>
+                <div class="architecture-grid">
+                    <div class="arch-item">
+                        <span class="arch-layer">Embedding Layer</span>
+                        <span class="arch-desc">Converts words to 128-dim vectors</span>
+                    </div>
+                    <div class="arch-item">
+                        <span class="arch-layer">Conv1D Layer</span>
+                        <span class="arch-desc">128 filters, kernel size 5</span>
+                    </div>
+                    <div class="arch-item">
+                        <span class="arch-layer">Global Max Pooling</span>
+                        <span class="arch-desc">Reduces dimensionality</span>
+                    </div>
+                    <div class="arch-item">
+                        <span class="arch-layer">Dense Layer</span>
+                        <span class="arch-desc">64 neurons with ReLU</span>
+                    </div>
+                    <div class="arch-item">
+                        <span class="arch-layer">Dropout</span>
+                        <span class="arch-desc">50% dropout for regularization</span>
+                    </div>
+                    <div class="arch-item">
+                        <span class="arch-layer">Output Layer</span>
+                        <span class="arch-desc">Sigmoid activation</span>
+                    </div>
+                </div></center>
+            </div><br>
+
+            <!-- Dataset -->
+            <center><div class="about-card animate-slide-in-up">
+                <h2><i class="fas fa-database"></i> Training Data</h2><br>
+                <div class="about-content">
+                    <p>
+                        The model is trained on a comprehensive dataset containing:
+                    </p>
+                    <ul class="feature-list">
+                        <p><i class="fas fa-check-circle"></i> 20,000+ fake news articles</li>
+                        <p><i class="fas fa-check-circle"></i> 20,000+ real news articles</li>
+                        <p><i class="fas fa-check-circle"></i> Diverse topics and sources</li>
+                        <p><i class="fas fa-check-circle"></i> Balanced class distribution</li>
+                    </ul>
+                </div>
+            </div></center><br><br>
+
+            <!-- Performance Metrics -->
+            <center><div class="about-card animate-slide-in-up">
+                <h2><i class="fas fa-chart-bar"></i> Performance</h2><br>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">0.94</div>
+                        <div class="metric-label">Precision</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">0.96</div>
+                        <div class="metric-label">Recall</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">0.95</div>
+                        <div class="metric-label">F1-Score</div>
+                    </div>
+                </div>
+            </div></center><br><br>
+
+            <!-- Technologies -->
+           <center><div class="about-card animate-slide-in-up">
+                <h2><i class="fas fa-code"></i> Technologies Used</h2><br>
+                <div class="tech-tags">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Keras</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Chart.js</span>
+                </div>
+            </div></center> 
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Fake News Detection System. All rights reserved.</p>
+            <p class="footer-small">Powered by Deep Learning | Version 1.0.0</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+/* Dashboard Styles for Fake News Detection System */
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.dashboard-header h1 {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dashboard-header h1 i {
+    color: var(--primary-color);
+}
+
+.header-subtitle {
+    color: var(--gray-color);
+    margin-top: 0.25rem;
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+/* KPI Cards */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.kpi-card {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.kpi-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+.kpi-icon.blue {
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary-color);
+}
+
+.kpi-icon.red {
+    background: rgba(247, 37, 133, 0.1);
+    color: var(--danger-color);
+}
+
+.kpi-icon.green {
+    background: rgba(76, 201, 240, 0.1);
+    color: var(--success-color);
+}
+
+.kpi-icon.orange {
+    background: rgba(248, 150, 30, 0.1);
+    color: var(--warning-color);
+}
+
+.kpi-content {
+    flex: 1;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    line-height: 1.2;
+}
+
+.kpi-label {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+/* Charts Row */
+.charts-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.chart-card {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.chart-header {
+    margin-bottom: 1.5rem;
+}
+
+.chart-header h3 {
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-header h3 i {
+    color: var(--primary-color);
+}
+
+.chart-wrapper {
+    height: 300px;
+    position: relative;
+}
+
+/* Recent Predictions */
+.recent-predictions {
+    background: var(--white-color);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-top: 1.5rem;
+}
+
+.recent-predictions .section-header {
+    margin-bottom: 1.5rem;
+}
+
+.recent-predictions h2 {
+    color: var(--dark-color);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recent-predictions h2 i {
+    color: var(--primary-color);
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    color: var(--dark-color);
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem !important;
+    color: var(--gray-color);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-fake {
+    background: rgba(247, 37, 133, 0.1);
+    color: var(--danger-color);
+}
+
+.status-real {
+    background: rgba(76, 201, 240, 0.1);
+    color: var(--success-color);
+}
+
+.status-suspicious {
+    background: rgba(248, 150, 30, 0.1);
+    color: var(--warning-color);
+}
+
+/* Model Metrics */
+.metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.metric-label {
+    color: var(--gray-color);
+    font-weight: 500;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Loading State */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    text-align: center;
+}
+
+.loading-spinner .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: var(--dark-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 5px 5px 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--dark-color) transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .charts-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-wrapper {
+        height: 250px;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .kpi-card {
+        padding: 1rem;
+    }
+    
+    .kpi-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .kpi-value {
+        font-size: 1.5rem;
+    }
+    
+    th, td {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 0.5rem;
+    }
+    
+    .chart-wrapper {
+        height: 200px;
+    }
+}

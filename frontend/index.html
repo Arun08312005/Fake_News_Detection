@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>FakeNews Detector</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="animate-fade-in-down">Fake News Detection System</h1>
+            <p class="animate-fade-in-up">Advanced AI-powered tool to identify and combat misinformation</p>
+        </section>
+
+        <!-- Detection Form -->
+        <section class="detection-form animate-slide-in-up">
+            <h2><i class="fas fa-search"></i> Analyze News Article</h2>
+            <form id="detectionForm">
+                <div class="form-group">
+                    <label for="title"><i class="fas fa-heading"></i> News Title</label>
+                    <input type="text" id="title" placeholder="Enter the news title..." autocomplete="off">
+                    <small class="form-text">Enter the headline of the news article</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="text"><i class="fas fa-align-left"></i> News Content</label>
+                    <textarea id="text" placeholder="Paste the news article content here..."></textarea>
+                    <small class="form-text">Paste the full article text for accurate analysis</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fas fa-search"></i> Detect Fake News
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="clearBtn">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Example Buttons -->
+            <div class="examples-section">
+                <p>Try an example:</p>
+                <div class="example-buttons">
+                    <button class="btn btn-outline example-btn" data-example="fake">
+                        <i class="fas fa-exclamation-triangle"></i> Fake News Example
+                    </button>
+                    <button class="btn btn-outline example-btn" data-example="real">
+                        <i class="fas fa-check-circle"></i> Real News Example
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section" style="display: none;"></section>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing news content...</p>
+        </div>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2>Why Choose Our System?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p>Powered by advanced CNN architecture for accurate detection</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-time Analysis</h3>
+                    <p>Get results in seconds with our optimized model</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>95% Accuracy</h3>
+                    <p>High precision detection with validated performance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is processed securely and not stored</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Predictions -->
+        <section class="history-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Recent Predictions</h2>
+                <a href="/dashboard.html" class="view-all-link">View Dashboard <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Title</th>
+                            <th>Result</th>
+                            <th>Confidence</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <tr>
+                            <td colspan="4" class="empty-state">
+                                <i class="fas fa-history"></i>
+                                <p>No predictions yet. Start analyzing!</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Fake News Detection System. All rights reserved.</p>
+            <p class="footer-small">Powered by Deep Learning | Version 1.0.0</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
